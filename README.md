@@ -9,6 +9,3 @@ Codes will be added gradually as it takes some time to write the relevant commen
 
 ## Installation
 Coded with MATLAB R2019a and Maple 2019. Required no installation.
-
-## Contributor(s)
-[Amir Baharvand](ambahar@outlook.com)
