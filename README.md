@@ -3,7 +3,7 @@ My repository for the solution of
 
 A refined sinusoidal  theory for laminated composite and sandwich plates (RSPTZ)
 
-**Li, X., & Liu, D. (1995). Zigzag theory for composite laminates. AIAA Journal, 33(6), 1163–1165. https://doi.org/10.2514/3.12671**
+**R. Xiaohui, W. Zhen, J. Bin, A refined sinusoidal theory for laminated composite and sandwich plates, Mech. Adv. Mater. Struct. 27 (2020) 2013–2025. doi:10.1080/15376494.2018.1538469.**
 
 Other included plate theories
 
