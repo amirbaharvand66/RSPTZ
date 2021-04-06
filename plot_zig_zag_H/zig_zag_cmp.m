@@ -31,12 +31,14 @@ for k = 1:n
     H(dis*k -(dis - 1) : k*dis) = N + N1 + NN;
 end
 
-figure ('position', [0 0 800 600])
+fig_MzHz = figure (1);
+set (fig_MzHz, 'Pos', [0 0 800 600])
 plot(M, crd/h, 'k', 'LineWidth', 2)
 hold on
 plot(H, crd/h, '--k', 'LineWidth', 2)
-set(gca, 'FontSize', 16)
+set(gca, 'FontSize', 18)
 ylabel('$\frac{z}{h}$', 'Interpreter','latex', 'FontSize', 36); set(get(gca,'ylabel'),'rotation',0)
+yticks([-0.5, -0.16, 0.16, 0.5])
 xlim([-1.5, 1.5])
 
 %plotting layers
@@ -59,14 +61,18 @@ for k = 1:n
     dH(dis*k -(dis - 1) : k*dis) = dN ;
 end
 
-figure ('position', [0 0 800 600])
+fig_dMzHz = figure (2);
+set (fig_dMzHz, 'Pos', [0 0 800 600])
 plot(dM, crd/h, 'k', 'LineWidth', 2)
 hold on
 plot(dH, crd/h, '--k', 'LineWidth', 2)
-set(gca, 'FontSize', 16)
+set(gca, 'FontSize', 18)
 ylabel('$\frac{z}{h}$', 'Interpreter','latex', 'FontSize', 36); set(get(gca,'ylabel'),'rotation',0)
+yticks([-0.5, -0.16, 0.16, 0.5])
 xlim([-10, 15])
 
 %plotting layers
 plot_layers(-10, 15, lam.z)
 legend('$M^{k}$', '$H^{k}$', 'Interpreter','latex', 'FontSize', 24)
+saveas(fig_MzHz, 'MzHz', 'epsc')
+saveas(fig_dMzHz, 'dMzHz', 'epsc')
