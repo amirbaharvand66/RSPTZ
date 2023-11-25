@@ -1,0 +1,256 @@
+\section{Derivation of \texorpdfstring{$\delta U$}{} and \texorpdfstring{$\delta W$}{}} 
+
+\subsection{Derivation of \texorpdfstring{$\delta U$}{}} \label{app:delU}
+
+% \begin{flalign*}
+%   & a = b & \\
+%   & c = b &
+% \end{flalign*}
+
+% \begin{flalign}
+%     \lambda &= \lambda_1 + \lambda_2 &\notag\\
+%       &= \Lambda &\\
+%       &= \Lambda_1 + \Lambda_2 & \notag
+%  \end{flalign}
+
+\begin{flalign*}
+    & N_x \delta u_{0, x} = (N_x \delta u_0)_{,x} - N_{x, x} \delta u_0 & \\
+    & M_{x1} \delta u_{1, x} = (M_{x1} \delta u_1)_{,x} - M_{x1, x} \delta u_1 & \\
+    & M_{x2} \delta u_{z, x} = (M_{x2} \delta u_z)_{,x} - M_{x2, x} \delta u_z & \\
+    & M_{x3} \delta w_{0, xx} = (M_{x3} \delta w_{0, x})_{,x} - M_{x3, x} \delta w_{0, x} =
+    (M_{x3} \delta w_{0, x})_{,x} - (M_{x3, x} \delta w_0)_{,x} + M_{x3, xx} \delta w_0 & 
+\end{flalign*}
+
+\begin{flalign*}
+    & N_y \delta v_{0, y} = (N_y \delta v_0)_{,y} - N_{y, y} \delta v_0 & \\
+    & M_{y1} \delta v_{1, y} = (M_{y1} \delta v_1)_{,y} - M_{y1, y} \delta v_1 & \\
+    & M_{y2} \delta v_{z, y} = (M_{y2} \delta v_z)_{,y} - M_{y2, y} \delta v_z & \\
+    & M_{y3} \delta w_{0, yy} = (M_{y3} \delta w_{0, y})_{,y} - M_{y3, y} \delta w_{0, y} = 
+    (M_{y3} \delta w_{0, y})_{,y} - (M_{y3, y} \delta w_0)_{,y} + M_{y3, yy} \delta w_0 &
+\end{flalign*}
+
+\begin{flalign*}
+    & N_{xy} \delta u_{0, y} = (N_xy \delta u_0)_{,y} - N_{xy, y} \delta u_0 & \\
+    & M_{xy1} \delta u_{1, y} = (M_{xy1} \delta u_1)_{,y} - M_{xy1, y} \delta u_1 & \\
+    & M_{xy2} \delta u_{z, y} = (M_{xy2} \delta u_z)_{,y} - M_{xy2, y} \delta u_z & \\
+    & M_{xy} \delta u_{0, x} = (N_xy \delta v_0)_{,x} - N_{xy, x} \delta v_0 & \\
+    & M_{xy1} \delta v_{1, x} = (M_{xy1} \delta v_1)_{,x} - M_{xy1, x} \delta v_1 & \\
+    & M_{xy2} \delta v_{z, x} = (M_{xy2} \delta v_z)_{,x} - M_{xy2, x} \delta v_z & \\
+    & 2M_{xy3} \delta w_{0, xy} = 2[(M_{xy3} \delta w_{0, x})_{,y} - M_{xy3, y} \delta w_{0, x}] = 
+    2[ (M_{xy3} \delta w_{0, x})_{,y} - (M_{xy3, y} \delta w_0)_{,x} + M_{xy3,xy} \delta w_0] &
+\end{flalign*}
+
+
+\begin{flalign}
+    \int_{\Omega}^{} & \Bigg( \Bigg. - N_{x, x} \delta u_0 - M_{x1, x} \delta u_1 - M_{x2, x} \delta u_z + M_{x3, xx} \delta w_0 &\notag \\
+     & - N_{y, y} \delta v_0 - M_{y1, y} \delta v_1 - M_{y2, y} \delta v_z + M_{y3, yy} \delta w_0 &\notag \\
+     & + V_{y1} \delta v_1 + V_{y2} \delta v_z + V_{x1} \delta u_1 + V_{x2} \delta u_z &  &\notag\\
+     & - N_{xy, y} \delta u_0 - M_{xy1, y} \delta u_1 - M_{xy2, y} \delta u_z &\notag \\
+     & - N_{xy, x} \delta v_0 - M_{xy1, x} \delta v_1 - M_{xy2, x} \delta v_z &\notag \\
+     & + 2M_{xy3,xy} \delta w_0 \Bigg. \Bigg) dxdy &
+\end{flalign}
+
+\begin{flalign}
+    \int_{\Gamma}^{} & \Bigg( \Bigg. N_x n_x \delta u_0 + M_{x1} n_x \delta u_1 + M_{x2} n_x \delta u_z+ M_{x3} n_x \delta w_{0, x} - M_{x3, x} n_x \delta w_0  &\notag\\
+    & + N_y n_y \delta v_0 + M_{y1} n_y \delta v_1 + M_{y2} n_y \delta v_z + M_{y3} n_y \delta w_{0, y} + M_{y3} n_y \delta w_{0, y} - M_{y3, y} n_y  &\notag\\
+    & + N_xy n_y \delta u_0 + M_{xy1} n_y \delta u_1 + M_{xy2} n_y \delta u_z +
+    N_xy n_x \delta v_0 + M_{xy1} n_x \delta v_1 + M_{xy2} n_x \delta v_z  &\notag\\
+    & + 2M_{xy3} n_y \delta w_{0, x} - 2M_{xy3, y} n_x \delta w_0 \delta w_0 \Bigg. \Bigg) ds =  &\notag\\
+    \int_{\Gamma}^{} & \Bigg( \Bigg. N_x n_x \delta u_0 + M_{x1} n_x \delta u_1 + M_{x2} n_x \delta u_z+ M_{x3} n_x \delta w_{0, x} - M_{x3, x} n_x \delta w_0  &\notag\\
+    & + N_y n_y \delta v_0 + M_{y1} n_y \delta v_1 + M_{y2} n_y \delta v_z + M_{y3} n_y \delta w_{0, y} + M_{y3} n_y \delta w_{0, y} - M_{y3, y} n_y \delta w_0  &\notag\\
+    & + N_xy n_y \delta u_0 + M_{xy1} n_y \delta u_1 + M_{xy2} n_y \delta u_z +
+    N_xy n_x \delta v_0 + M_{xy1} n_x \delta v_1 + M_{xy2} n_x \delta v_z  &\notag\\
+    & + 2M_{xy3} n_y \delta w_{0, x} - M_{xy3,y} n_x \delta w_0 - M_{xy3, x} n_y \delta w_0 \Bigg. \Bigg) ds &
+\end{flalign}
+
+
+where $M_{xy3} n_y \delta w_{0, x}$ vanishes in boundary conditions as the normal vector is $n = (0, 1)$ on planes $\delta w_{0, x}(x_0, y)$ and $\delta w_{0, x}(x_a, y)$.
+
+\subsection{Derivation of \texorpdfstring{$\delta W$}{}} \label{app:delW}
+% W_{px}
+
+\begin{flalign*}
+    & \delta u_z^1 = H^1(z) u_z = N^1(z) + N^1_1(z) + N^1_N(z)  & \\
+    & N^1(z) = (-1)^1 \sinh(\zeta_1) & \\
+    & N^1_1(z) = -(z^2 / 2 / z_1 + (z^3 -1.5z_1 z^2) / 6 / z^2_{2})(-a_1\cosh(-1)) & \\
+    & N^1_N(z) = -((z^3 - 1.5z_1 z^2) / 6 / z^2_{2})((-1)^1 a_1 \cosh(1)) & \\
+    & \zeta_1 = a_1 z - b_1 , a_1 = \frac{2}{z_{2} - z_1} , b_1 = \frac{z_{2} + z_1}{z_{2} - z_1} &
+\end{flalign*}
+
+\begin{flalign*}
+    & \delta u_z^N = H^N(z) u_z = N^N(z) + N^N_1(z) + N^N_N(z)  & \\
+    & N^N(z) = (-1)^N \sinh(\zeta_N) & \\
+    & N^N_1(z) = -(z^2 / 2 / z_1 + (z^3 -1.5z_1 z^2) / 6 / z^2_{N+1})(-a_1\cosh(-1)) & \\
+    & N^N_N(z) = -((z^3 - 1.5z_1 z^2) / 6 / z^2_{N+1})((-1)^N a_N \cosh(1)) & \\
+    & \zeta_N = a_N z - b_N , a_N = \frac{2}{z_{N+1} - z_N} , b_N = \frac{z_{N+1} + z_N}{z_{N+1} - z_N} &
+\end{flalign*}
+
+\begin{flalign*}
+    \delta W_{px} = -\int_{\Omega} & \Bigg( \Bigg. p_x^b \delta u_0 + \phi_3^1 p_x^b \frac{\partial \delta w_0}{\partial x} + \phi_1^1 p_x^b \delta u_1 + \phi_2^1 p_x^b \delta u_z   &\notag \\
+     & + p_x^t \delta u_0 + \phi_3^N p_x^t \frac{\partial \delta w_0}{\partial x} + \phi_1^N p_x^t \delta u_1 + \phi_2^N p_x^t \delta u_z \Bigg. \Bigg) &\notag \\
+    = -\int_{\Omega} & \Bigg( \Bigg. \{p_x^b + p_x^t\} \delta u_0 + \{\phi_3^1 p_x^b +\phi_3^N p_x^t \} \frac{\partial \delta w_0}{\partial x}  \delta u_z &\notag \\
+     & + \{\phi_1^1 p_x^b + \phi_1^N p_x^t \} \delta u_1 + \{\phi_2^1 p_x^b +\phi_2^N p_x^t \} \Bigg. \Bigg) dxdy = &\notag \\
+\end{flalign*}
+
+where
+
+\begin{flalign*}
+    & p_{x_0} = p_x^b + p_x^t  & \\
+    & p_{x_1} = \phi_2^1 p_x^b +\phi_2^N p_x^t & \\
+    & p_{x_2} = \phi_1^1 p_x^b + \phi_1^N p_x^t & \\
+    & p_{x_3} = \phi_3^1 p_x^b +\phi_3^N p_x^t & 
+\end{flalign*}
+
+% W_{py}
+\begin{flalign*}
+    & \delta v_z^1 = H^1(z) v_z = N^1(z) + N^1_1(z) + N^1_N(z)  & \\
+    & N^1(z) = (-1)^1 \sinh(\zeta_1) & \\
+    & N^1_1(z) = -(z^2 / 2 / z_1 + (z^3 -1.5z_1 z^2) / 6 / z^2_{2})(-a_1\cosh(-1)) & \\
+    & N^1_N(z) = -((z^3 - 1.5z_1 z^2) / 6 / z^2_{2})((-1)^1 a_1 \cosh(1)) & \\
+    & \zeta_1 = a_1 z - b_1 , a_1 = \frac{2}{z_{2} - z_1} , b_1 = \frac{z_{2} + z_1}{z_{2} - z_1} &
+\end{flalign*}
+
+\begin{flalign*}
+    & \delta v_z^N = H^N(z) v_z = N^N(z) + N^N_1(z) + N^N_N(z)  & \\
+    & N^N(z) = (-1)^N \sinh(\zeta_N) & \\
+    & N^N_1(z) = -(z^2 / 2 / z_1 + (z^3 -1.5z_1 z^2) / 6 / z^2_{N+1})(-a_1\cosh(-1)) & \\
+    & N^N_N(z) = -((z^3 - 1.5z_1 z^2) / 6 / z^2_{N+1})((-1)^N a_N \cosh(1)) & \\
+    & \zeta_N = a_N z - b_N , a_N = \frac{2}{z_{N+1} - z_N} , b_N = \frac{z_{N+1} + z_N}{z_{N+1} - z_N} &
+\end{flalign*}
+
+\begin{flalign*}
+    \delta W_{py} = -\int_{\Omega} & \Bigg( \Bigg. p_y^b \delta v_0 + \phi_3^1 p_y^b \frac{\partial \delta w_0}{\partial y} + \phi_1^1 p_y^b \delta v_1 + \phi_2^1 p_y^b \delta v_z   &\notag \\
+     & + p_y^t \delta v_0 + \phi_3^N p_y^t \frac{\partial \delta w_0}{\partial y} + \phi_1^N p_y^t \delta v_1 + \phi_2^N p_y^t \delta v_z \Bigg. \Bigg) &\notag \\
+    = -\int_{\Omega} & \Bigg( \Bigg. \{p_y^b + p_y^t\} \delta v_0 + \{\phi_3^1 p_y^b +\phi_3^N p_y^t \} \frac{\partial \delta w_0}{\partial y}  \delta v_z &\notag \\
+     & + \{\phi_1^1 p_y^b + \phi_1^N p_y^t \} \delta v_1 + \{\phi_2^1 p_y^b +\phi_2^N p_y^t \} \Bigg. \Bigg) dydy = &\notag \\
+\end{flalign*}
+
+where
+
+\begin{flalign*}
+    & p_{y_0} = p_y^b + p_y^t  & \\
+    & p_{y_1} = \phi_2^1 p_y^b +\phi_2^N p_y^t & \\
+    & p_{y_2} = \phi_1^1 p_y^b + \phi_1^N p_y^t & \\
+    & p_{y_3} = \phi_3^1 p_y^b +\phi_3^N p_y^t & 
+\end{flalign*}
+
+    
+\begin{flalign*}
+    &\delta W_{q} = -\int_{\Omega} ( q^b \delta w_0 + q^t \delta w_0 ) dxdy = -\int_{\Omega} ( q^b + q^t) \delta w_0 dxdy = -\int_{\Omega} (q \delta w_0) dxdy &\notag
+\end{flalign*}
+
+\begin{flalign*}
+    \delta W_{Tx0} & = -\int_{-\frac{h}{2}}^{\frac{h}{2}} \left [ T_{x_0} \delta u^k (x_0, y, z) + T_{xz0} \delta w(x_0, y, z) \right ] dz &\notag \\
+    & = -\int_{-\frac{h}{2}}^{\frac{h}{2}} \left [ T_{x_0} \delta u_0 + \phi_3 T_{x_0} \frac{\partial \delta w_0}{\partial x} + \phi_1 T_{x_0} + \phi_2 T_{x_0} + T_{xz0} \delta w_0 \right ] dz & 
+\end{flalign*}
+
+\begin{flalign*}
+    \delta W_{Ty0} & = -\int_{-\frac{h}{2}}^{\frac{h}{2}} \left [ T_{y_0} \delta v^k (y_0, y, z) + T_{yz0} \delta w(y_0, y, z) \right ] dz &\notag \\
+    & = -\int_{-\frac{h}{2}}^{\frac{h}{2}} \left [ T_{y_0} \delta v_0 + \phi_3 T_{y_0} \frac{\partial \delta w_0}{\partial y} + \phi_1 T_{y_0} + \phi_2 T_{y_0} + T_{yz0} \delta w_0 \right ] dz & 
+\end{flalign*}
+
+\begin{flalign*}
+    \delta W_{Txa} & = -\int_{-\frac{h}{2}}^{\frac{h}{2}} \left [ T_{x_a} \delta u^k (x_a, y, z) + T_{xza} \delta w(x_a, y, z) \right ] dz &\notag \\
+    & = -\int_{-\frac{h}{2}}^{\frac{h}{2}} \left [ T_{x_a} \delta u_a + \phi_3 T_{x_a} \frac{\partial \delta w_0}{\partial x} + \phi_1 T_{x_a} + \phi_2 T_{x_a} + T_{xza} \delta w_0 \right ] dz & 
+\end{flalign*}
+
+\begin{flalign*}
+    \delta W_{Tyb} & = -\int_{-\frac{h}{2}}^{\frac{h}{2}} \left [ T_{y_b} \delta v^k (y_b, y, z) + T_{yzb} \delta w(y_b, y, z) \right ] dz &\notag \\
+    & = -\int_{-\frac{h}{2}}^{\frac{h}{2}} \left [ T_{y_b} \delta v_b + \phi_3 T_{y_b} \frac{\partial \delta w_0}{\partial y} + \phi_1 T_{y_b} + \phi_2 T_{y_b} + T_{yzb} \delta w_0 \right ] dz & 
+\end{flalign*}
+
+where
+
+\begin{equation}
+\begin{matrix}
+    \begin{Bmatrix}
+            \overline{N}_{x0} \\
+            \overline{M}_{x10} \\
+            \overline{M}_{x20} \\
+            \overline{M}_{x30} \\
+    \end{Bmatrix} = 
+    \displaystyle\int_{-\frac{h}{2}}^{\frac{h}{2}}
+    \begin{Bmatrix}
+            T_{x0} \\
+            \phi_1 T_{x0} \\
+            \phi_2 T_{x0} \\
+            \phi_3 T_{x0} \\
+    \end{Bmatrix}
+    dz,
+    \begin{Bmatrix}
+            \overline{N}_{y0} \\
+            \overline{M}_{y10} \\
+            \overline{M}_{y20} \\
+            \overline{M}_{y30} \\
+    \end{Bmatrix} = 
+    \displaystyle\int_{-\frac{h}{2}}^{\frac{h}{2}}
+    \begin{Bmatrix}
+            T_{y0} \\
+            \phi_1 T_{y0} \\
+            \phi_2 T_{y0} \\
+            \phi_3 T_{y0} \\
+    \end{Bmatrix}
+    dz
+\end{matrix}
+\label{eq:bc_Bar_terms1}
+\end{equation}
+
+\begin{equation}
+\begin{matrix}
+    \begin{Bmatrix}
+            \overline{N}_{xa} \\
+            \overline{M}_{x1a} \\
+            \overline{M}_{x2a} \\
+            \overline{M}_{x3a} \\
+    \end{Bmatrix} = 
+    \displaystyle\int_{-\frac{h}{2}}^{\frac{h}{2}}
+    \begin{Bmatrix}
+            T_{x0} \\
+            \phi_1 T_{xa} \\
+            \phi_2 T_{xa} \\
+            \phi_3 T_{xa} \\
+    \end{Bmatrix}
+    dz,
+    \begin{Bmatrix}
+            \overline{N}_{yb} \\
+            \overline{M}_{y1b} \\
+            \overline{M}_{y2b} \\
+            \overline{M}_{y3b} \\
+    \end{Bmatrix} = 
+    \displaystyle\int_{-\frac{h}{2}}^{\frac{h}{2}}
+    \begin{Bmatrix}
+            T_{y0} \\
+            \phi_1 T_{yb} \\
+            \phi_2 T_{yb} \\
+            \phi_3 T_{yb} \\
+    \end{Bmatrix}
+    dz
+\end{matrix}
+\label{eq:bc_Bar_terms2}
+\end{equation}
+
+\begin{equation}
+\begin{matrix}
+    \begin{Bmatrix}
+            \overline{V}_{xz0} \\
+            \overline{V}_{yz0} \\
+    \end{Bmatrix} = 
+    \displaystyle\int_{-\frac{h}{2}}^{\frac{h}{2}}
+    \begin{Bmatrix}
+            T_{xz0} \\
+            T_{yz0} \\
+    \end{Bmatrix}
+    dz,
+    \begin{Bmatrix}
+            \overline{V}_{xza} \\
+            \overline{V}_{yzb} \\
+    \end{Bmatrix} = 
+    \displaystyle\int_{-\frac{h}{2}}^{\frac{h}{2}}
+    \begin{Bmatrix}
+            T_{xza} \\
+            T_{yzb} \\
+    \end{Bmatrix}
+    dz
+\end{matrix}
+\label{eq:bc_Bar_terms3}
+\end{equation}

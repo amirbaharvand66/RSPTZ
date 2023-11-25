@@ -1,0 +1,96 @@
+\section{Components of \texorpdfstring{$\boldsymbol{Q}$}{}} \label{app:stiff_mat}
+\subsection{Components of \texorpdfstring{$\boldsymbol{C}$}{}}
+$\bm{C}$ is the stiffness matrix and is defined according to each lay-up coordinate system (1, 2, 3). 
+
+\begin{equation}
+\begin{Bmatrix}
+\sigma_1\\ 
+\sigma_2\\ 
+\sigma_3\\ 
+\tau_{12}\\ 
+\tau_{23}\\ 
+\tau_{31}
+\end{Bmatrix}
+=\begin{bmatrix}
+C_{11} & C_{12} & C_{13} & 0 & 0 & 0 \\ 
+C_{12} & C_{22} & C_{23} & 0 & 0 & 0 \\ 
+C_{13} & C_{23} & C_{33} & 0 & 0 & 0 \\ 
+0 & 0 & 0 & C_{44} & 0 & 0 \\ 
+0 & 0 & 0 & 0 & C_{55} & 0 \\ 
+0 & 0 & 0 & 0 & 0 & C_{66}
+\end{bmatrix}
+\begin{Bmatrix}
+\epsilon_1\\ 
+\epsilon_2\\ 
+\epsilon_3\\ 
+\gamma_{12}\\ 
+\gamma_{23}\\ 
+\gamma_{31}
+\end{Bmatrix}
+\label{eq:C_mat}
+\end{equation}
+
+where the components of $\bm{C}$ are
+
+\begin{equation*}
+\begin{matrix}
+    C_{11} = \displaystyle\frac{E_{11} (1 - \nu_{23} \nu_{32})}{\Delta} \quad, \quad
+    C_{12} = \displaystyle\frac{E_{11} (\nu_{21} + \nu_{31} \nu_{23})}{\Delta} \quad, \quad
+    C_{13} = \displaystyle\frac{E_{11} (\nu_{31} + \nu_{21} \nu_{32})}{\Delta}
+\end{matrix}
+\end{equation*}
+
+\begin{equation*}
+\begin{matrix}
+    C_{22} = \displaystyle\frac{E_{22} (1 - \nu_{13} \nu_{31})}{\Delta} \quad , \quad
+    C_{23} = \displaystyle\frac{E_{22} (\nu_{32} + \nu_{12} \nu_{31})}{\Delta} \quad, \quad
+    C_{33} = \displaystyle\frac{E_{33} (1 - \nu_{12} \nu_{21})}{\Delta}
+\end{matrix}
+\end{equation*}
+
+\begin{equation}
+\begin{matrix}
+    C_{44} = \mu_{12} \quad, \quad
+    C_{55} = \mu_{23} \quad, \quad
+    C_{66} = \mu_{13} \quad
+\end{matrix}
+\end{equation}
+
+\begin{equation}
+\begin{matrix}
+    \Delta = 1 - \nu_{12} \nu_{21} - \nu_{23} \nu_{32} - \nu_{31} \nu_{13} - \nu_{21} \nu_{32} \nu_{13} - \nu_{12} \nu_{23} \nu_{31}
+\end{matrix}
+\label{eq:C_components}
+\end{equation}
+
+$E_{11}$ is the longitudinal Young's modulus, $E_{22}$ and $E_{33}$ are transverse Young's moduli, $\mu_{12}$ and $\mu_{13}$ are in-plane shear moduli, $\mu_{23}$ is the out-of-plane shear modulus, $\nu_{12}$ and $\nu_{13}$ are in-plane Poisson's ratios and $\nu_{23}$ is the out-of-plane Poisson's ratio. Other constants are calculated from the following set of equations.
+
+\begin{equation}
+\begin{matrix}
+    \dfrac{\nu_{12}}{E_{11}} = \dfrac{\nu_{21}}{E_{22}} \quad , \quad
+    \dfrac{\nu_{13}}{E_{11}} = \dfrac{\nu_{31}}{E_{33}} \quad , \quad
+    \dfrac{\nu_{23}}{E_{22}} = \dfrac{\nu_{32}}{E_{33}}
+\end{matrix}
+\label{eq:nu_componenst}
+\end{equation}
+
+\subsection{Components of \texorpdfstring{$\boldsymbol{Q}$}{}}
+
+\begin{flalign}
+    & Q_{11} = C_{11} c^4 + 2 (C_{12} + 2 C_{44}) s^2 c^2 + C_{22} s^4& \notag \\
+    & Q_{12} = C_{12} (c^4 + s^4) + (C_{11} + C_{22} - 4 C_{44}) s^2 c^2&  \notag \\
+    & Q_{13} = C_{13} c^2 + C_{23} s^2 & \notag \\
+    & Q_{14} = (C_{11} - C_{12} - 2 C_{44}) s c^3 + (C_{12} - C_{22} + 2 C_{44}) c s^3 & \notag \\
+    & Q_{22} = C_{11} s^4 + C_{22} c^4 + (2 C_{12} + 4 C_{44}) s^2 c^2 & \notag \\
+    & Q_{23} = C_{13} s^2 + C_{23} c^2 & \notag \\
+    & Q_{24} = (C_{11} - C_{12} - 2 C_{44}) s^3 c + (C_{12} - C_{22} + 2 C_{44}) c^3 s & \notag \\
+    & Q_{33} = C_{33} & \notag \\
+    & Q_{34} = (C_{31} - C_{32}) s c & \notag \\
+    & Q_{44} = (C_{11} - 2 C_{12} + C_{22} - 2 C_{44}) c^2 s^2 + C_{44} (c^4 + s^4) & \notag \\
+    & Q_{55} = C_{55} c^2 + C_{66} s^2 & \notag \\
+    & Q_{56} = (C_{66} - C_{55}) c s & \notag \\
+    & Q_{66} = C_{55} s^2 + C_{66} c^2 & 
+\end{flalign}
+
+where $c = \cos(\theta)$, $s = \sin(\theta)$ and $Q_{ij} = Q_{ji}$ for $i, j = 1..6$
+
